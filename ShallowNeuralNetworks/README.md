@@ -31,6 +31,7 @@ $$
 Similarly for joint $2$, and joint $3$, which is at $\frac{-\theta_{20}}{\theta_{21}}$, and $\frac{-\theta_{30}}{\theta_{31}}$.
 
 We have:
+
 $$
 y(x) = \phi_{0} + \sum_{i=1}^3 \phi_{i} \times \mathrm{ReLU}(\theta_{i0} + \theta_{i1}x) \implies \frac{dy}{dx} = \sum_{i=1}^3 \phi_{i} \times \theta_{i1}
 $$
