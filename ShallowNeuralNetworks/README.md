@@ -45,3 +45,29 @@ Slope of region 2: $\phi_{1} \times \theta_{11} + \phi_{3} \times \theta_{31}$.
 Slope of region $3$: $\phi_{1} \times \theta_{11} + \phi_{2} \times \theta_{21} + \phi_{3} \times \theta_{31}$.
 
 Slope of region 4: $\phi_{1} \times \theta_{11} + \phi_{2} \times \theta_{21}$.
+
+## Problem 3.5
+***Proof.***
+Case $1$: the input is negative ($z<0$), $\alpha \in R^+$
+
+We have:
+
+$$
+\begin{cases}
+\mathrm{ReLU}[\alpha \times z] = 0 \\
+\alpha \times \mathrm{ReLU}[z] = \alpha \times 0 = 0
+\end{cases} 
+$$
+
+Case $2$: the input is not negative ($z \geq 0$), $\alpha \in R^+$
+
+We have:
+
+$$
+\begin{cases}
+\mathrm{ReLU}[\alpha \times z] = \alpha \times z \\
+\alpha \times \mathrm{ReLU}[z] = \alpha \times z
+\end{cases}
+$$
+
+Thus, $\mathrm{ReLU}[\alpha \times z] = \alpha \times \mathrm{ReLU}[z]$ for $z \in R$ and $\alpha \in R^+$.
