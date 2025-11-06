@@ -48,6 +48,7 @@ Slope of region 4: $\phi_{1} \times \theta_{11} + \phi_{2} \times \theta_{21}$.
 
 ## Problem 3.5
 ***Proof.***
+
 Case $1$: the input is negative ($z<0$), $\alpha \in R^+$
 
 We have:
