@@ -71,4 +71,4 @@ $$
 \end{cases}
 $$
 
-Thus, $\mathrm{ReLU}[\alpha \times z] = \alpha \times \mathrm{ReLU}[z]$ for $z \in R$ and $\alpha \in R^+$.
+Thus, $\mathrm{ReLU}[\alpha \times z] = \alpha \times \mathrm{ReLU}[z]$  $\forall z \in R, \alpha \in R^+$.
