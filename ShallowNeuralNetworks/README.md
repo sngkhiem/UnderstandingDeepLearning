@@ -6,7 +6,8 @@ If the activation function is $a[z] = \psi_{0} + \psi_{1}z$, the mapping from in
 ![Problem3.1](img/1.png)
 
 ## Problem 3.2:
-[3.3j](img/2.png)
+
+![3.3j](img/2.png)
 
 Consider in that range, if the hidden unit value is $0$ (which means the pre-activation value is negative, leads to $ReLU$ clipped it to 0, which means in this range this hidden unit do not contribute anything to our network), then that hidden unit is inactive.
 
