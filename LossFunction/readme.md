@@ -62,6 +62,6 @@ $$
 
 Loss function:
 
-![Los function L](img/image.png)
+![Los function L](img/loss_fn.png)
 
 As we can see in the above plotting, the loss of case 2 will high if probability z = 0, which means we make wrong decision, and it is lowing down when probability z tends to 1.0, which means we make correct choice. Case 1 has same intuition.
