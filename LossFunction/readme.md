@@ -59,7 +59,8 @@ L &= -(1-1)\log(1-z)-1\log(z) \\
 &= -\log(z).
 \end{aligned}
 $$
- Loss function:
+
+Loss function:
 
 ![[img/image.png]]
 
