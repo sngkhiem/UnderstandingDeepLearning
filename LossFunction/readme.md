@@ -110,3 +110,29 @@ L[\phi] = - \sum_{i=1}^I \cos[y_{i} - f[x, \phi]]
 $$
 
 We want to get the direction $y$ that maximize the $Pr[y \vert f(x, \phi), \kappa]$. Or, we must take direction $y$ at the point that the distribution has largest value, which is our predicted parameter $\mu$. If this value out of range $[-\pi, \pi]$, we can add/subtract from multiples of $2\pi$ until it lies in the range.
+
+## Problem 5.4
+
+Using a mixture of two Gaussian with parameter $\theta = \{ \lambda, \mu_{1}, \sigma_{1}^2, \mu_{2}, \sigma_{2}^2 \}$:
+
+$$
+Pr(y \vert \lambda, \mu_{1}, \mu_{2}, \sigma^2_{1}, \sigma^2_{2}) = \frac{\lambda}{\sqrt{ 2 \pi \sigma_{1}^2 }} \exp \left[ \frac{-(y-\mu_{1})^2}{2\sigma_{1}^2}  \right] + \frac{1-\lambda}{\sqrt{ 2\pi \sigma_{2}^2 }} \exp \left[ \frac{-(y-\mu_{2})^2}{2\sigma_{2}^2} \right]
+$$
+
+Let $\theta = \{ f_{1}[x, \phi], f_{2}[x, \phi], f_{3}[x, \phi], f_{4}[x, \phi], f_{5}[x, \phi] \}$. The $\lambda$ must lie in range $(0, 1)$. So we map $\lambda$ through a logistic sigmoid function:
+
+$$
+sig[z] = \frac{1}{1 + \exp[-z]}
+$$
+
+The likelihood become:
+
+$$
+Pr(y \vert \theta) = \frac{sig[f_{1}[x, \phi]]}{\sqrt{ 2 \pi f_{3}[x, \phi]^2 }} \exp \left[ \frac{-(y - f_{2}[x, \phi])^2}{2f_{3}[x, \phi]^2} \right] + \frac{1-sig[f_{1}[x, \phi]]}{\sqrt{ 2 \pi f_{5}[x, \phi]^2 }} \exp \left[ \frac{-(y - f_{4}[x, \phi])^2}{2f_{5}[x, \phi]^2} \right]
+$$
+
+Using negative log-likelihood as a loss function. We have:
+
+$$
+L(\phi) = - \sum_{i=1}^I \log \left[ \frac{sig[f_{1}[x_{i},\phi]]}{\sqrt{ 2 \pi f_{3}[x_{i},\phi]^2 }} \exp \left[ \frac{-(y-f_{2}[x_{i},\phi])^2}{2f_{3}[x_{i},\phi]^2}  \right] + \frac{1-sig[f_{1}[x_{i},\phi]]}{\sqrt{ 2\pi f_{5}[x_{i}, \phi]^2 }} \exp \left[ \frac{-(y-f_{4}[x_{i},\phi])^2}{2f_{5}[x_{i}, \phi]^2} \right]  \right]
+$$
